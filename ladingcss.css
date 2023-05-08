@@ -1,0 +1,439 @@
+:root{
+    --color-violet:#642a73;
+}
+.iconohover {
+    width: 64px;
+    height: 64px;
+}
+body{
+font-family: 'Open Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin:  auto;
+    overflow: hidden;
+    /* el overflow hidden hace que lo que sobresalga se esconda y no aparezca el scrol */
+}
+.titulo{
+    color: #642a73;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+/* header */
+header{
+    width: 100%;
+    height: 600px;
+    background: #0F2027;
+        /* fallback for old browsers */
+        background: -webkit-gradient(to right, hsla(198, 39%, 28%, 0.615), hsla(195, 35%, 19%, 0.64), hsla(198, 44%, 11%, 0.631)),
+            url(https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?ixid=MnwxMzcxOTN8MHwxfHNlYXJjaHwxOXx8Z2FtaW5nfGVufDB8fHx8MTY0NzQzNTIxNw&ixlib=rb-1.2.1&fm=jpg&w=3840&h=2160&fit=max);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, hsla(198, 39%, 28%, 0.615), hsla(195, 35%, 19%, 0.64), hsla(198, 44%, 11%, 0.631)),url(https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?ixid=MnwxMzcxOTN8MHwxfHNlYXJjaHwxOXx8Z2FtaW5nfGVufDB8fHx8MTY0NzQzNTIxNw&ixlib=rb-1.2.1&fm=jpg&w=3840&h=2160&fit=max);
+        background-size: cover;
+        
+        background-attachment: fixed;
+        position:relative;
+        background-position: bottom;
+        background-position-y:-10px ;
+        /* el degradado lo copiamos de una pagina llamada https: //uigradients.com/#MoonlitAsteroid y despues le colocamos la url con nuestra imagen de fondo ,despues lo posiciones para que se viera completo  */
+}
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0 ;
+    
+}
+nav>a{
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right:13px;
+}
+nav > a:hover {
+    text-decoration: underline;
+}
+header .textos-header{
+    display: flex;
+    height: 430px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.wave{
+    position:absolute;
+    bottom: 0px;
+    width: 100%;
+    background-attachment: fixed;
+}
+.textos-header h1{
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+}
+.textos-header h2 {
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+/* about us */
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.imagen-about-us{
+    width: 48%;
+    position: relative;
+    bottom: 20px;
+}
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+.contenido-textos h3 span{
+    background: var(--color-violet);
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    text-align: center;  
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0,0.5);
+    margin-right: 5px;
+    
+}
+.contenido-textos p {
+    padding: 0px 0px 30px 37px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/* galeria */
+
+.portafolio{
+    background-color: #f2f2f2;
+}
+.galeria-port{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.imagen-port{
+    width: 24%;
+    margin-bottom:10px;
+    overflow: hidden;
+    /* overflow hidden es para que no aparesca el contenido que usaremos de hover */
+    position:relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    height: 198px;
+}
+
+
+
+.imagen-port>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* hover galeria le da el height haciendo que se adapte al contenido que esta en el ,pero mis imagenes no estan bien proporcionedas y por eso yo le dejo el height en .imagen-port */
+
+.hover-galeria{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    background: hsla(288, 46%, 31%, 0.698);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    transform: scale(0);
+}
+.hover-galeria img{
+    width: 70px;
+}
+.hover-galeria p{
+    color:#fff;
+}
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+} 
+/* trendremos que tocar la .imagen-port porque no podremos tocar el hover-galeria por que no se vera (el scale:0) */
+
+
+
+
+
+/* cliente */
+
+/* .gris{
+    position: absolute;
+    width: 100%;
+    height:300px;
+    background-color: #f2f2f2;
+    z-index: 1;
+    top: 2240px;
+} */
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.cards .card{
+    background:#642a73 ;
+    display: flex;
+    width: 46%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    }
+.cards .card img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border:3px solid #fff;
+    border-radius:50%;
+    display: block;
+}
+.cards .card > .contenido-texto-card{
+    width: 60%;
+color:#fff;
+}
+.cards .card>.contenido-texto-card p {
+    
+    font-weight: 300;
+    padding: 5px;
+}
+
+
+
+
+/* our team */
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin:  auto;
+    overflow: hidden;
+    /* el overflow hidden hace que lo que sobresalga se esconda y no aparezca el scrol */
+}
+.about-services{
+    background:#f2f2f2;
+    padding-bottom:30px ;
+}
+.servicio-cont{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    margin: auto;
+    width: 90%;
+}
+.servicio-ind{
+    width: 30%;
+    text-align: center;
+    height:300px;
+    background-color: white;
+    padding: 30px 20px;
+    text-align: center;
+        box-shadow: 0 0 6px 0 rgba(99, 40, 158, 0.5);
+        margin-left: 2px;
+}
+.servicio-ind img{
+    width: 100%;
+    border-radius: 5px;
+}
+.servicio-ind h3 {
+    margin:10px 0;
+}
+.servicio-ind p {
+    font-weight:300;
+    text-align: justify;
+}
+
+/* footer */
+
+footer{
+    background:#414141;
+    padding:60px 0 30px 0;
+    margin:auto;
+    overflow: hidden;
+}
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin:auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(184, 182, 182);
+}
+.content-foo{
+    text-align: center;
+    color: white;
+}
+.content-foo h4{
+    color: white;
+    border-bottom: 3px solid var(--color-violet);
+    padding-bottom:7px;
+    margin-bottom:20px;
+}
+.content-foo p {
+    color: #ccc;
+    
+}
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    color: #ccc;
+}
+@media (max-width:960px){
+    header{
+        background-position-y: -30px;
+    }
+
+}
+@media (max-width:500px){
+    
+    header nav{
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left:50px;
+    }
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: white;
+    }
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+    .imagen-about-us{
+        width:90%;
+    }
+    /* galeria */
+    .imagen-port{
+        width: 47%;
+        
+    }
+    /* clientes */
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cards .card{
+        width: 90%;
+        padding: 3px;
+        
+    }
+    .cards .card:first-child{
+        margin-bottom: 30px;
+    }
+    /* servicios */
+    .servicio-cont{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+        
+    }
+    .servicio-ind:nth-child(1),.servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+        
+}
+@media (max-width:260px){
+nav{
+    text-align: center;
+    padding: 30px  0 0;
+    
+}
+nav>a {
+margin-right: 10px;
+}
+.textos-header h1{
+    font-size: 20px;
+    margin-left: 19px;
+}
+.textos-header h2{
+    font-size:13px;
+}
+/* about us */
+.imagen-about-us{
+    margin-bottom:60px;
+    width:99%;
+}
+.sobre-nosotros .contenido-textos{
+    width: 95%;
+}
+.contenedor .titulo{
+    font-size: 2rem;
+}
+main .sobre-nosotros{
+    padding: 30px 0 60px 0;
+}
+/* galeria */
+.imagen-port{
+    width: 95%;
+}
+/* clientes */
+.cards .card{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.cards .card img{
+    width: 100px;
+    height: 100px;
+}
+/* footer */
+.contenedor-footer{
+    flex-direction: column;
+    border: none;
+}
+.content-foo{
+    margin-bottom:20px;
+    text-align:center;
+}
+.content-foo h4{
+    border-bottom: none;
+}
+.content-foo p {
+    border-bottom: none;
+    border-bottom: 1px #ccc solid;
+    padding-bottom: 20px;
+}
+.titulo-final{
+    font-size: 15px;
+}
+}
